@@ -18,6 +18,14 @@
 </template>
 
 <script>
+
+
+// countryEmojy: "🇫🇷"
+// firstName: "Jamal"
+// isCommingSoon: false
+// lastName: "Errakhaoui"
+// location: "Avignon"
+// title: "Backend Software Engineer"
 export default {
   name: "PersonComponent",
   props: {

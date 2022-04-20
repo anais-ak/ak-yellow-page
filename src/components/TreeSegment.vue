@@ -10,7 +10,9 @@
       <PersonComponent
         v-for="person in tree.people"
         :key="person.name"
-        v-bind="person"
+        :name="person.firstName + ' ' + person.lastName"
+        :title="person.title"
+        :country_emoji="person.countryEmojy"
         @click.native="openModal(person)"
       />
     </div>
@@ -46,7 +48,11 @@ export default {
   methods: {
     openModal(person) {
       this.showModal = true;
-      this.person = person;
+
+      this.person = {
+        ...person,
+        name: person.firstName + " " + person.lastName
+      };
     },
   },
 };

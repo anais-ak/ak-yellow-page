@@ -2,9 +2,9 @@
   <div id="app">
     <input type="search" class="searchbar" placeholder="Search..." />
     <button class="button" @click="refreshData">Refresh Data</button>
-    <TreeSegment :tree="tree" />
-    <div v-if="tree.groups">
-      <div v-for="tribe in tree.groups" :key="tribe.name">
+    <!-- <TreeSegment :tree="tree" /> -->
+    <div v-if="tree">
+      <div v-for="tribe in tree" :key="tribe.title">
         <TreeSegment :key="tribe.title" :tree="tribe" />
         <div if="tribe.groups" class="flex justify-evenly my-12 mx-10 gap-x-3">
           <TreeSegment
@@ -19,70 +19,36 @@
 </template>
 
 <script>
+import axios from "axios";
 import TreeSegment from "./components/TreeSegment.vue";
 
-// if root has groups & people
-//    display the group name
-//    display the people (this will be the leader)
-//    display the groups
-// if root has only people
-//    display the title
-//    display the people
-
-const mockData = [
-  {
-    title: "Tech Team",
-    people: [
-      {
-        name: "Lachland Laycock",
-      },
-    ],
-    groups: [
-      {
-        title: "Brands XP Tribe",
-        people: [
-          {
-            name: "Nikita",
-          },
-        ],
-        groups: [
-          {
-            title: "Brands Network Squad",
-            people: [
-              { name: "Person1" },
-              { name: "Person1" },
-              { name: "Person1" },
-              { name: "Person1" },
-              { name: "Person1" },
-              { name: "Person1" },
-            ],
-          },
-          {
-            title: "Brands Catalog Squad",
-            people: [
-              { name: "Person2" },
-              { name: "Person2" },
-              { name: "Person2" },
-              { name: "Person2" },
-              { name: "Person2" },
-              { name: "Person2" },
-            ],
-          },
-        ],
-      },
-    ],
-  },
-];
+const getPeople = async () => {
+  return await axios
+    .get("http://localhost:3001");
+};
 
 export default {
   name: "TreePage",
   components: { TreeSegment },
   data() {
-    return { tree: mockData[0] };
+    return { 
+      tree: [] 
+    };
+  },
+  created() {
+    console.log('---0');
+    this.refreshData();
   },
   methods: {
-    refreshData() {
-      this.tree = mockData[0];
+    async refreshData() {
+      console.log('---1');
+      try {
+        const tree = await getPeople();
+        console.log('---', tree);
+        this.tree = tree.data;
+      } catch (e) {
+        console.log(e);
+      }
     },
   },
 };

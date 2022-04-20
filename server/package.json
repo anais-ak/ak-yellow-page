@@ -1,0 +1,6 @@
+{
+  "name": "ak-yellow-page-server",
+  "dependencies": {
+    "@notionhq/client": "^1.0.4"
+  }
+}
