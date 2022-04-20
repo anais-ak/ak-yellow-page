@@ -1,27 +1,66 @@
 <template>
   <div id="app">
+    <div class="flex justify-center">
+      <img
+        alt="Ankorstore logo"
+        src="https://www.rebranding.sandbox.ankorstore.com/images/logo/logo-black.svg"
+      />
+    </div>
     <div>
-      <img class="text-center" alt="Ankorstore logo" src="https://www.rebranding.sandbox.ankorstore.com/images/logo/logo-black.svg">
-      <h1 class="text-center text-xl mt-4">Thoughts and Posts</h1>
+      <h1 class="text-center text-4xl my-5">Yellow Pages</h1>
 
-      <div class="flex flex-row">
-        <div class="flex items-stretch">
-          <div class="w-14 h-14 rounded-lg flex items-center justify-center bg-blue-500 shadow-lg">01</div>
-          <div class="w-14 h-14 rounded-lg flex items-center justify-center bg-blue-500 shadow-lg">02</div>
-          <div class="w-14 h-14 rounded-lg flex items-center justify-center bg-blue-500 shadow-lg">03</div>
-        </div>
+      <div class="flex justify-evenly my-3">
+        <PersonComponent name="Nico d’Audiffret" title="Co-founder & CEO" />
+        <PersonComponent name="Nicolas Cohen" title="Co-founder & CEO" />
+        <PersonComponent name="Jessica Atlan" title="Chief of Staff" />
+      </div>
+      <div class="flex justify-evenly mt-12 gap-x-3">
+        <PersonComponent name="Fanny Ponce" title="VP Market" area="Market" />
+        <PersonComponent
+          name="Nico Sitter"
+          title="Head of Growth"
+          area="Growth"
+        />
+        <PersonComponent
+          name="Pierre Luc Joffre"
+          title="Finance Director"
+          area="Finance"
+        />
+        <PersonComponent
+          name="Thomas Lombard"
+          title="Strategic Project Director"
+          area="Ankorstart"
+        />
+        <PersonComponent
+          name="Nathalie Lambert"
+          title="VP Legal & Compliance"
+          area="Legal"
+        />
+        <PersonComponent
+          name="Pilou Lacoste"
+          title="Co-Founder & CBO"
+          area="Brand"
+        />
+        <PersonComponent
+          name="Camille Vaisse"
+          title="Head of Ops"
+          area="Ops"
+        />
+        <PersonComponent name="Thomas Pueyo" title="CPO" area="Product" />
+        <PersonComponent name="Lachlan Laycock" title="CTO" area="Tech" />
+        <PersonComponent name="Johann Vivier" title="VP People" area="HR" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import PersonComponent from "./components/PersonComponent.vue";
 
 export default {
-  name: 'HomePage',
-  components: {
-  }
-}
+  name: "HomePage",
+  components: { PersonComponent },
+};
 </script>
 
 <style>
