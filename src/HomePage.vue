@@ -11,15 +11,27 @@
           <div class="w-14 h-14 rounded-lg flex items-center justify-center bg-blue-500 shadow-lg">03</div>
         </div>
       </div>
+      <button id="show-modal" @click="showModal = true">Show Modal</button>
+      <ModalComponent 
+        :show="showModal"
+        @close="showModal = false"
+        titleContent="Hiya">
+      </ModalComponent>
     </div>
   </div>
 </template>
 
 <script>
-
+import ModalComponent from './components/ModalComponent.vue'
 export default {
   name: 'HomePage',
   components: {
+    ModalComponent
+  },
+  data() {
+    return {
+      showModal: false
+    }
   }
 }
 </script>
