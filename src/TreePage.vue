@@ -1,26 +1,23 @@
 <template>
   <div id="app">
-    Hello this is the tree page
-    
+    <h1 class="text-center text-4xl my-5">Tech team</h1>
+
+    <PersonComponent
+      name="Lachlan Laycock"
+      title="CTO"
+    />
   </div>
 </template>
 
 <script>
-// import PersonComponent from "./components/PersonComponent.vue";
+import PersonComponent from "./components/PersonComponent.vue";
 
 export default {
   name: "HomePage",
-  components: { },
+  components: { PersonComponent },
+  computed: {},
 };
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>

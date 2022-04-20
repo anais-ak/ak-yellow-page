@@ -20,12 +20,9 @@ export default {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-body {
-   font-family: 'Poppins', sans-serif;
-}
 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+   font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

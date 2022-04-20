@@ -8,7 +8,7 @@
         />
       </div>
       <div>
-        <h1 class="text-center text-4xl my-5">Yellow Pages</h1>
+        <h1 class="text-center text-4xl my-5 mb-10">Yellow Pages</h1>
 
         <div class="flex justify-evenly my-3">
           <PersonComponent name="Nico d’Audiffret" title="Co-founder & CEO" />
