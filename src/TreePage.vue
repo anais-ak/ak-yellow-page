@@ -1,12 +1,10 @@
 <template>
   <div id="app">
+    <button @click="refreshData">Refresh Data</button>
     <TreeSegment :tree="tree" />
     <div v-if="tree.groups">
       <div v-for="tribe in tree.groups" :key="tribe.name">
-        <TreeSegment
-          :key="tribe.title"
-          :tree="tribe"
-        />
+        <TreeSegment :key="tribe.title" :tree="tribe" />
         <div if="tribe.groups" class="flex justify-evenly my-12 mx-10 gap-x-3">
           <TreeSegment
             v-for="sqd in tribe.groups"
@@ -15,7 +13,6 @@
           />
         </div>
       </div>
-      
     </div>
   </div>
 </template>
@@ -79,13 +76,21 @@ const mockData = [
 export default {
   name: "TreePage",
   components: { TreeSegment },
-  computed: {
-    tree() {
-      return mockData[0];
+  data() {
+    return { tree: mockData[0] };
+  },
+  methods: {
+    refreshData() {
+      this.tree = mockData[0];
     },
   },
 };
 </script>
 
 <style>
+button {
+  position: absolute;
+  right: 50px;
+  top: 25px;
+}
 </style>
