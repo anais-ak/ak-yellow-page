@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <input type="search" class="searchbar" placeholder="Search..." />
     <button class="button" @click="refreshData">Refresh Data</button>
     <TreeSegment :tree="tree" />
     <div v-if="tree.groups">
@@ -92,5 +93,13 @@ export default {
   position: absolute;
   right: 50px;
   top: 25px;
+}
+
+.searchbar {
+  position: absolute;
+  top: 20px;
+  left: 50px;
+  border: 1px solid grey;
+  padding: 6px;
 }
 </style>
