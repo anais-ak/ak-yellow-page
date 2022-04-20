@@ -1,5 +1,5 @@
 <template>
-  <div class="rounded overflow-hidden shadow-lg max-w-xs cursor-pointer">
+  <div class="card rounded overflow-hidden shadow-lg max-w-xs cursor-pointer">
     <div v-if="area" class="w-full orange text-white font-bold py-2">
       {{ area }}
     </div>
@@ -29,6 +29,11 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .orange {
-  background: #ff6400ff;
+  background: #131E75;
+}
+
+.card:hover { 
+  transform: scale(1.05);
+  transition: all .2s ease;
 }
 </style>

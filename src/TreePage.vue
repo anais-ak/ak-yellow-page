@@ -1,21 +1,89 @@
 <template>
   <div id="app">
-    <h1 class="text-center text-4xl my-5">Tech team</h1>
-
-    <PersonComponent
-      name="Lachlan Laycock"
-      title="CTO"
-    />
+    <TreeSegment :tree="tree" />
+    <div v-if="tree.groups">
+      <div v-for="tribe in tree.groups" :key="tribe.name">
+        <TreeSegment
+          :key="tribe.title"
+          :tree="tribe"
+        />
+        <div if="tribe.groups" class="flex justify-evenly my-12 mx-10 gap-x-3">
+          <TreeSegment
+            v-for="sqd in tribe.groups"
+            :tree="sqd"
+            :key="sqd.title"
+          />
+        </div>
+      </div>
+      
+    </div>
   </div>
 </template>
 
 <script>
-import PersonComponent from "./components/PersonComponent.vue";
+import TreeSegment from "./components/TreeSegment.vue";
+
+// if root has groups & people
+//    display the group name
+//    display the people (this will be the leader)
+//    display the groups
+// if root has only people
+//    display the title
+//    display the people
+
+const mockData = [
+  {
+    title: "Tech Team",
+    people: [
+      {
+        name: "Lachland Laycock",
+      },
+    ],
+    groups: [
+      {
+        title: "Brands XP Tribe",
+        people: [
+          {
+            name: "Nikita",
+          },
+        ],
+        groups: [
+          {
+            title: "Brands Network Squad",
+            people: [
+              { name: "Person1" },
+              { name: "Person1" },
+              { name: "Person1" },
+              { name: "Person1" },
+              { name: "Person1" },
+              { name: "Person1" },
+            ],
+          },
+          {
+            title: "Brands Catalog Squad",
+            people: [
+              { name: "Person2" },
+              { name: "Person2" },
+              { name: "Person2" },
+              { name: "Person2" },
+              { name: "Person2" },
+              { name: "Person2" },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+];
 
 export default {
-  name: "HomePage",
-  components: { PersonComponent },
-  computed: {},
+  name: "TreePage",
+  components: { TreeSegment },
+  computed: {
+    tree() {
+      return mockData[0];
+    },
+  },
 };
 </script>
 
