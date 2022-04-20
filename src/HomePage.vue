@@ -72,6 +72,8 @@
 <script>
 import ModalComponent from './components/ModalComponent.vue'
 import PersonComponent from "./components/PersonComponent.vue";
+import TreePage from "./TreePage.vue";
+
 export default {
   name: 'HomePage',
   components: {
