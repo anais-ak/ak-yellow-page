@@ -21,39 +21,40 @@ export default {
               >X</button>
             <h2 class="font-bold text-xl uppercase tracking-wide">{{ profile.name }}</h2>
           </div>
-
-          <img
-            class="w-full"
-            :src="profile.picture_url"
-            alt="Profile Picture"
-          />
+          <div class="text-center rounded-lg overflow-hidden w-90 mx-auto">
+            <img
+              class="object-cover h-70 w-full"
+              :src="profile.picture_url"
+              alt="Profile Picture"
+            />
+          </div>
 
           <div class="modal-body">
             <table class="border-collapse table-auto w-full text-sm text-left">
               <tbody>
                 <tr>
-                  <td>Job title</td>
-                  <td class="font-bold text-lg">{{ profile.title }}</td>
+                  <td class="font-bold text-right pr-5">Job title</td>
+                  <td class="text-lg">{{ profile.title }}</td>
                 </tr>
                 <tr>
-                  <td>Joined</td>
-                  <td class="font-bold text-lg">{{ profile.company_birthday }}</td>
+                  <td class="font-bold text-right pr-5">Joined</td>
+                  <td class="text-lg">{{ profile.company_birthday }}</td>
                 </tr>
                 <tr>
-                  <td>Location</td>
-                  <td class="font-bold text-lg">{{ profile.location }}</td>
+                  <td class="font-bold text-right pr-5">Location</td>
+                  <td class="text-lg">{{ profile.location }}</td>
                 </tr>
                 <tr>
-                  <td>Email</td>
-                  <td class="font-bold text-lg">{{ profile.email }}</td>
+                  <td class="font-bold text-right pr-5">Email</td>
+                  <td class="text-lg">{{ profile.email }}</td>
                 </tr>
                 <tr>
-                  <td>Phone</td>
-                  <td class="font-bold text-lg">{{ profile.phone }}</td>
+                  <td class="font-bold text-right pr-5">Phone</td>
+                  <td class="text-lg">{{ profile.phone }}</td>
                 </tr>
                 <tr>
-                  <td>Phone</td>
-                  <td class="font-bold text-lg">{{ profile.phone }}</td>
+                  <td class="font-bold text-right pr-5">Phone</td>
+                  <td class="text-lg">{{ profile.phone }}</td>
                 </tr>
               </tbody>
             </table>
