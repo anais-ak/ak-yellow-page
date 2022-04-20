@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <button @click="refreshData">Refresh Data</button>
+    <button class="button" @click="refreshData">Refresh Data</button>
     <TreeSegment :tree="tree" />
     <div v-if="tree.groups">
       <div v-for="tribe in tree.groups" :key="tribe.name">
@@ -88,7 +88,7 @@ export default {
 </script>
 
 <style>
-button {
+.button {
   position: absolute;
   right: 50px;
   top: 25px;
