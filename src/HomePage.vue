@@ -61,7 +61,7 @@
       <ModalComponent 
         :show="showModal"
         @close="showModal = false"
-        titleContent="Hiya">
+        :profile="person">
       </ModalComponent>
     </div>
 
@@ -84,7 +84,21 @@ export default {
   data() {
     return {
       showModal: false,
-      isShowingTree: false
+      isShowingTree: false,
+      person: {
+        name: 'John Doe',
+        title: 'Back-end Developer',
+        company_birthday: 'Jan 21, 2022',
+        location: 'Berlin (Germany)',
+        country_emoji: 'germany',
+        email: 'john.doe@ankorstore.com',
+        phone: '+22.789.234.567',
+        picture_url: 'https://img.freepik.com/free-photo/pleasant-looking-serious-man-stands-profile-has-confident-expression-wears-casual-white-t-shirt_273609-16959.jpg?size=626&ext=jpg&ga=GA1.2.2018362746.1636761600',
+        fun_fact: 'I like to dance on ice-cream',
+        favourite_dessert: 'Chocolat',
+        projects: [],
+        bio: '----',
+      }
     }
   },
   methods: {

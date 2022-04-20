@@ -2,7 +2,7 @@
 export default {
   props: {
     show: Boolean,
-    titleContent: String,
+    profile: Object,
   },
   methods: {
   }
@@ -14,20 +14,54 @@ export default {
     <div v-if="show" class="modal-mask">
       <div class="modal-wrapper">
         <div class="modal-container">
-          <div class="modal-header" v-if="titleContent">
-            {{ titleContent }}
+          <div class="modal-header">
+            <button
+                class="modal-default-button"
+                @click="$emit('close')"
+              >X</button>
+            <h2 class="font-bold text-xl uppercase tracking-wide">{{ profile.name }}</h2>
           </div>
 
+          <img
+            class="w-full"
+            :src="profile.picture_url"
+            alt="Profile Picture"
+          />
+
           <div class="modal-body">
-            <slot name="body">default body</slot>
+            <table class="border-collapse table-auto w-full text-sm text-left">
+              <tbody>
+                <tr>
+                  <td>Job title</td>
+                  <td class="font-bold text-lg">{{ profile.title }}</td>
+                </tr>
+                <tr>
+                  <td>Joined</td>
+                  <td class="font-bold text-lg">{{ profile.company_birthday }}</td>
+                </tr>
+                <tr>
+                  <td>Location</td>
+                  <td class="font-bold text-lg">{{ profile.location }}</td>
+                </tr>
+                <tr>
+                  <td>Email</td>
+                  <td class="font-bold text-lg">{{ profile.email }}</td>
+                </tr>
+                <tr>
+                  <td>Phone</td>
+                  <td class="font-bold text-lg">{{ profile.phone }}</td>
+                </tr>
+                <tr>
+                  <td>Phone</td>
+                  <td class="font-bold text-lg">{{ profile.phone }}</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
 
           <div class="modal-footer">
             <slot name="footer">
-              <button
-                class="modal-default-button"
-                @click="$emit('close')"
-              >OK</button>
+              
             </slot>
           </div>
         </div>
@@ -55,7 +89,7 @@ export default {
 }
 
 .modal-container {
-  width: 300px;
+  width: 40%;
   margin: 0px auto;
   padding: 20px 30px;
   background-color: #fff;
