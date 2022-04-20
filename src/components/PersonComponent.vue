@@ -9,7 +9,9 @@
       alt="Profile Picture"
     />
     <div class="px-6 py-4">
-      <div class="font-bold text-xl mb-2">{{ name }}</div>
+      <div class="font-bold text-xl mb-2">
+        {{ name }}<span>{{ country_emoji }}</span>
+      </div>
       <div class="text-xl mb-2">{{ title }}</div>
     </div>
   </div>
@@ -22,6 +24,7 @@ export default {
     name: String,
     title: String,
     area: String,
+    country_emoji: String,
   },
 };
 </script>
@@ -29,11 +32,11 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .orange {
-  background: #131E75;
+  background: #131e75;
 }
 
-.card:hover { 
+.card:hover {
   transform: scale(1.05);
-  transition: all .2s ease;
+  transition: all 0.2s ease;
 }
 </style>

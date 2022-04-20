@@ -12,8 +12,8 @@
 
         <div class="flex justify-evenly my-3">
           <PersonComponent name="Nico d’Audiffret" title="Co-founder & CEO" />
-          <PersonComponent name="Nicolas Cohen" title="Co-founder & CEO" />
           <PersonComponent name="Jessica Atlan" title="Chief of Staff" />
+          <PersonComponent name="Nicolas Cohen" title="Co-founder & CEO" />
         </div>
         <div class="flex justify-evenly my-12 mx-10 gap-x-3">
           <PersonComponent name="Fanny Ponce" title="VP Market" area="Market" />
@@ -29,12 +29,12 @@
           />
           <PersonComponent
             name="Thomas Lombard"
-            title="Strategic Project Director"
+            title="Strategic Project"
             area="Ankorstart"
           />
           <PersonComponent
             name="Nathalie Lambert"
-            title="VP Legal & Compliance"
+            title="VP Legal"
             area="Legal"
           />
           <PersonComponent
