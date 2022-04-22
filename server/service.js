@@ -1,10 +1,10 @@
 const { Client } = require("@notionhq/client");
 
 const notion = new Client({
-  auth: "secret_v0QfO3wLqtqgKsCzA4RBddQyFxAvTcdduL8op5c6hb2",
+  auth: "🤷",
 });
 
-const personDatabaseId = "1f96e9e031b3451c86aa18de73a2fd62";
+const personDatabaseId = "🤷";
 
 const listPeople = async (squadId) => {
   const resp = await notion.databases.query({
